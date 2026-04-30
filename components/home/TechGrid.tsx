@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { contentRegistry } from '@/data/content';
 
 export const TechGrid = () => {
-  // Only show technologies that have content available in the registry
-  const availableTechnologies = technologies.filter(tech => 
-    Object.keys(contentRegistry).includes(tech.id)
-  );
+  // Only show top 6 technologies that have content available in the registry
+  const availableTechnologies = technologies
+    .filter(tech => Object.keys(contentRegistry).includes(tech.id))
+    .slice(0, 6);
 
   return (
     <section className="py-24 bg-background">
@@ -16,10 +16,11 @@ export const TechGrid = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
-              Popular <span className="text-gradient">Technologies</span>
+              Top <span className="text-gradient">Hiring Skills</span>
             </h2>
             <p className="text-zinc-400 text-lg">
-              Select a technology to explore curated blogs, interview questions, and hands-on coding challenges.
+              Master the technical stacks that companies are actively recruiting for. 
+              Each path includes company-specific interview questions.
             </p>
           </div>
           <Link 

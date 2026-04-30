@@ -13,7 +13,6 @@ import { blogRegistry } from '@/data/blog';
 const NAV_TABS = [
   { label: 'Overview', href: 'overview' },
   { label: 'Concepts', href: 'concepts' },
-  { label: 'Roadmap', href: 'roadmap' },
   { label: 'Projects', href: 'projects' },
   { label: 'Interview', href: 'interview' },
   { label: 'Articles', href: 'articles' },
@@ -183,12 +182,11 @@ export default function LearnDetailPage() {
       <div ref={navRef} className="sticky top-[72px] z-40 bg-background/90 backdrop-blur-xl border-b border-slate-100 shadow-sm">
         <Container className="max-w-6xl">
           <div className="overflow-x-auto scrollbar-none">
-            <div className="flex items-center justify-center gap-2 py-0 min-w-max">
+            <div className="flex items-center md:justify-center gap-2 py-2 px-4 md:px-0 min-w-max">
               {NAV_TABS.map((tab) => (
                 <button key={tab.href} onClick={() => scrollTo(tab.href)}
-                  className={`px-6 py-4 text-sm font-semibold transition-all relative whitespace-nowrap ${activeTab === tab.href ? 'text-primary bg-primary/5' : 'text-slate-400 hover:text-slate-700 hover:bg-slate-50'}`}>
+                  className={`px-6 py-3 text-sm font-semibold transition-all rounded-full whitespace-nowrap ${activeTab === tab.href ? 'text-primary bg-primary/10 shadow-sm' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
                   {tab.label}
-                  {activeTab === tab.href && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />}
                 </button>
               ))}
             </div>
@@ -211,7 +209,7 @@ export default function LearnDetailPage() {
                 <article className="space-y-8">
                   {content ? (
                     <div className="space-y-6 text-lg text-slate-700 leading-relaxed font-light">
-                      {content.openingHook && <p className="font-medium text-slate-900 text-xl leading-relaxed">{content.openingHook}</p>}
+                      {/* {content.openingHook && <p className="font-medium text-slate-900 text-xl leading-relaxed">{content.openingHook}</p>} */}
                       {content.introText.map((p, i) => <p key={i}>{p}</p>)}
                     </div>
                   ) : (
@@ -234,19 +232,22 @@ export default function LearnDetailPage() {
 
                 <article className="space-y-8 pt-8">
                   <SectionHeader title={`Why Learn ${tech.name}?`} />
-                  <p className="text-lg text-zinc-300 leading-relaxed font-light">{content?.whyLearn.demand}</p>
+                  <p className="text-lg text-slate-700 leading-relaxed font-light">{content?.whyLearn.demand}</p>
 
                   <div className="grid md:grid-cols-2 gap-6 mt-8">
-                    <div className="p-8 rounded-2xl bg-zinc-900/40 border border-white/5 flex flex-col justify-center">
-                      <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Average Salary</p>
-                      <p className="text-3xl font-display font-bold text-white mb-2">{content?.whyLearn.salaryRange}</p>
-                      <p className="text-sm text-zinc-500">For Freshers & Junior Devs</p>
+                    <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col justify-center hover:shadow-md transition-shadow">
+                      <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Average Salary
+                      </p>
+                      <p className="text-3xl font-display font-bold text-slate-900 mb-2">{content?.whyLearn.salaryRange}</p>
+                      <p className="text-sm text-slate-500">For Freshers & Junior Devs</p>
                     </div>
-                    <div className="p-8 rounded-2xl bg-primary/5 border border-primary/10">
+                    <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:shadow-md transition-shadow">
                       <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">Job Roles</p>
                       <div className="flex flex-wrap gap-2">
                         {content?.whyLearn.jobRoles.map((r) => (
-                          <span key={r.role} className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-sm font-semibold">{r.role}</span>
+                          <span key={r.role} className="px-3 py-1.5 rounded-xl bg-white border border-primary/20 text-slate-700 text-sm font-semibold shadow-sm">{r.role}</span>
                         ))}
                       </div>
                     </div>
@@ -330,57 +331,6 @@ export default function LearnDetailPage() {
                 )}
               </div>
 
-              {/* SECTION: ROADMAP ───────────────────────────── */}
-              <div id="roadmap" className="scroll-mt-48 space-y-16">
-                <SectionHeader title={`${tech.name} Roadmap (Beginner → Advanced)`} />
-
-                <div className="relative pt-4">
-                  {/* Vertical Line */}
-                  <div className="absolute left-[27px] md:left-1/2 top-4 bottom-4 w-1 bg-slate-200 rounded-full md:-translate-x-1/2" />
-
-                  <div className="space-y-12">
-                    {(content?.roadmap ?? []).map((r, i) => (
-                      <div key={r.phase} className={`relative flex flex-col md:flex-row gap-8 md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-
-                        {/* Dot indicator */}
-                        <div className="absolute left-[16px] md:left-1/2 w-7 h-7 bg-background border-4 border-primary rounded-full md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
-
-                        {/* Content Box */}
-                        <div className="pl-16 md:pl-0 md:w-1/2 flex flex-col justify-center relative">
-                          <div className={`md:p-8 ${i % 2 === 0 ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
-                            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{r.duration}</span>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{r.phase}</h3>
-
-                            <div className={`flex flex-col gap-5 ${i % 2 === 0 ? 'items-start' : 'items-start md:items-end'}`}>
-                              <div className="w-full">
-                                <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3 hover:text-zinc-300">Topics to Master</p>
-                                <div className={`flex flex-wrap gap-2 ${i % 2 === 0 ? 'justify-start' : 'justify-start md:justify-end'}`}>
-                                  {r.topics.map(t => (
-                                    <span key={t} className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 shadow-sm">{t}</span>
-                                  ))}
-                                </div>
-                              </div>
-                              <div className="w-full">
-                                <p className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-3 mt-4 hover:text-emerald-400">Build These</p>
-                                <ul className={`space-y-2 ${i % 2 === 0 ? '' : 'md:inline-block md:text-left'}`}>
-                                  {r.buildProjects.map(p => (
-                                    <li key={p} className="flex items-center gap-2 text-sm text-slate-600">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />{p}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Empty spacemaker for alternating layout */}
-                        <div className="hidden md:block md:w-1/2" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
 
               {/* SECTION: PROJECTS ──────────────────────────── */}
               <div id="projects" className="scroll-mt-48 space-y-16">
@@ -394,8 +344,8 @@ export default function LearnDetailPage() {
 
                     return (
                       <div key={level} className="space-y-6">
-                        <div className="border-b border-white/5 pb-2">
-                          <h3 className="text-xl font-bold text-white capitalize flex items-center gap-3">
+                        <div className="border-b border-slate-100 pb-2">
+                          <h3 className="text-xl font-bold text-slate-900 capitalize flex items-center gap-3">
                             <span className={`w-3 h-3 rounded-full bg-${bColor}-500`} />
                             {level} Projects
                           </h3>
@@ -445,10 +395,10 @@ export default function LearnDetailPage() {
                   )}
 
                   {/* View all CTA */}
-                  <div className="mt-10 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-sm text-zinc-500">
-                      Showing <span className="text-white font-bold">{previewQs.length}</span> of{' '}
-                      <span className="text-white font-bold">{allQs.length}</span> questions
+                  <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p className="text-sm text-slate-500">
+                      Showing <span className="text-slate-900 font-bold">{previewQs.length}</span> of{' '}
+                      <span className="text-slate-900 font-bold">{allQs.length}</span> questions
                     </p>
                     <Link
                       href={`/interview-questions?tech=${id}`}
@@ -516,7 +466,6 @@ export default function LearnDetailPage() {
                       { id: 'overview', label: 'What is React?' },
                       { id: 'how-it-works', label: 'How it works' },
                       { id: 'concepts', label: 'Core Concepts' },
-                      { id: 'roadmap', label: 'Learning Roadmap' },
                       { id: 'projects', label: 'Projects to Build' },
                       { id: 'interview', label: 'Interview Prep' },
                       { id: 'articles', label: 'Guides & Articles' },

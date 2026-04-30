@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { TechGrid } from "@/components/home/TechGrid";
 import { LatestBlogs } from "@/components/home/LatestBlogs";
+import { FeaturedJobs } from "@/components/home/FeaturedJobs";
+import { Benefits } from "@/components/home/Benefits";
 import { Container } from "@/components/ui/Container";
 
 export default function Home() {
@@ -10,7 +12,16 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      
+      {/* Primary Job Focus */}
+      <FeaturedJobs />
+      
+      {/* Value Proposition */}
+      <Benefits />
+
+      {/* Skills for Jobs */}
       <TechGrid />
+      
       <LatestBlogs />
       
       {/* Interview Prep CTA */}
@@ -42,3 +53,4 @@ export default function Home() {
     </main>
   );
 }
+

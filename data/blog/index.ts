@@ -7,6 +7,7 @@ import { developerPortfolioFresher2026 } from './developer-portfolio-freshers-20
 import { interviewPrepFresher2026 } from './interviewPrepFresher2026';
 import { itJobsChennaiFreshers2026 } from './itJobsChennaiFreshers2026';
 import { resumeTipsForFreshers2026 } from './resume-tips-freshers-it-2026';
+import { roadmapBlogs } from './roadmapBlogs';
 
 export const blogRegistry: Record<string, BlogContent> = {
   'first-it-job-freshers-2026': howToGetFirstJob2026,
@@ -17,4 +18,5 @@ export const blogRegistry: Record<string, BlogContent> = {
   'interview-prep-freshers-2026': interviewPrepFresher2026,
   'it-jobs-chennai-freshers-2026': itJobsChennaiFreshers2026,
   'resume-tips-freshers-it-2026': resumeTipsForFreshers2026,
+  ...roadmapBlogs,
 };

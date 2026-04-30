@@ -12,10 +12,10 @@ export const LatestBlogs = () => {
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 font-display">
-            Deep Dive into <span className="text-gradient">Articles</span>
+            Career Advice & <span className="text-gradient">Insights</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Expert insights and tutorials to keep you updated with the latest trends and best practices in the tech industry.
+            Expert strategies on resume building, interview techniques, and career growth for entry-level professionals.
           </p>
         </div>
 

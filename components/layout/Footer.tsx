@@ -12,14 +12,14 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <span className="bg-primary text-white p-2 rounded-xl shadow-glow">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
               </span>
               <span className="text-2xl font-bold tracking-tight font-display">
-                Tech<span className="text-primary">Hub</span>
+                Job<span className="text-primary">Hub</span>
               </span>
             </Link>
             <p className="text-zinc-500 leading-relaxed mb-6">
-              The ultimate destination for developers to master their craft through deep-dive blogs, interview prep, and technical guides.
+              The premier career platform for freshers. We bridge the gap between education and employment with verified jobs and interview prep.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export const Footer = () => {
 
         <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-400 text-sm">
-            © {currentYear} TechHub. All rights reserved. Built for the developer community.
+            © {currentYear} JobHub. All rights reserved. Empowering the next generation of professionals.
           </p>
           <div className="flex gap-6 items-center">
             <span className="text-xs text-slate-300 font-bold uppercase tracking-tighter">Powered by Next.js 15</span>

@@ -37,7 +37,13 @@ export default async function BlogDetailPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto">
             <div className="mb-12">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl">{tech?.icon}</span>
+                {tech?.icon && (
+                  tech.icon.startsWith('http') || tech.icon.startsWith('/') ? (
+                    <img src={tech.icon} alt={tech.name} className="w-10 h-10 object-contain" />
+                  ) : (
+                    <span className="text-4xl">{tech.icon}</span>
+                  )
+                )}
                 <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
                   {tech?.name}
                 </span>

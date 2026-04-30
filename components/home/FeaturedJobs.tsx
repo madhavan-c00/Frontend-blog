@@ -4,76 +4,53 @@ import { Section } from '../ui/Section';
 import { JobCard, Job } from '../jobs/JobCard';
 import { Button } from '../ui/Button';
 
-const MOCK_JOBS: Job[] = [
-  {
-    id: '1',
-    title: 'Frontend Developer (Intern)',
-    company: 'TechFlow',
-    location: 'Remote',
-    type: 'Internship',
-    salary: '$500 - $800 / mo',
-    postedAt: '2h ago',
-    logoColor: 'bg-indigo-500',
-    slug: 'frontend-developer-intern-techflow'
-  },
-  {
-    id: '2',
-    title: 'Junior Web Designer',
-    company: 'CreativeBox',
-    location: 'Bangalore, India',
-    type: 'Full-time',
-    salary: '₹6L - ₹8L / yr',
-    postedAt: '5h ago',
-    logoColor: 'bg-emerald-500',
-    slug: 'junior-web-designer-creativebox'
-  },
-  {
-    id: '3',
-    title: 'Associate Product Manager',
-    company: 'GrowthScale',
-    location: 'Hybrid',
-    type: 'Full-time',
-    salary: '₹12L - ₹15L / yr',
-    postedAt: '1d ago',
-    logoColor: 'bg-orange-500',
-    slug: 'associate-product-manager-growthscale'
-  },
-  {
-    id: '4',
-    title: 'Data Analyst (Fresher)',
-    company: 'InsightIQ',
-    location: 'Remote',
-    type: 'Full-time',
-    salary: '$40k - $55k / yr',
-    postedAt: '1d ago',
-    logoColor: 'bg-blue-500',
-    slug: 'data-analyst-fresher-insightiq'
-  },
-  {
-    id: '5',
-    title: 'Backend Engineer (Node.js)',
-    company: 'SystemCore',
-    location: 'San Francisco, CA',
-    type: 'Full-time',
-    salary: '$90k - $110k / yr',
-    postedAt: '2d ago',
-    logoColor: 'bg-purple-500',
-    slug: 'backend-engineer-node-js-systemcore'
-  },
-  {
-    id: '6',
-    title: 'Software Engineer Trainee',
-    company: 'GlobalStack',
-    location: 'Pune, India',
-    type: 'Training',
-    salary: '₹4L - ₹6L / yr',
-    postedAt: '3d ago',
-    logoColor: 'bg-red-500',
-    slug: 'software-engineer-trainee-globalstack'
-  }
-];
+import { db } from "@/lib/firebase";
+import { collectionGroup, getDocs, limit, query, where } from "firebase/firestore";
 
-export const FeaturedJobs = () => {
+const COLORS = ['bg-indigo-500', 'bg-emerald-500', 'bg-orange-500', 'bg-blue-500', 'bg-purple-500', 'bg-red-500', 'bg-cyan-500'];
+
+async function getFeaturedJobs(): Promise<Job[]> {
+  const jobs: Job[] = [];
+  try {
+    const batches = ['batch_1', 'batch_2', 'batch_3'];
+    
+    for (const batchName of batches) {
+      if (jobs.length >= 6) break;
+      const q = query(
+        collectionGroup(db, batchName), 
+        where('processed', '==', true),
+        limit(6)
+      );
+      const snap = await getDocs(q);
+
+      snap.docs.forEach((doc) => {
+        if (jobs.length >= 6) return;
+        const data = doc.data();
+        const pathParts = doc.ref.path.split('/');
+        const date = pathParts[1];
+        
+        jobs.push({
+          id: doc.id,
+          title: data.title || 'Tech Role',
+          company: data.company || 'Company',
+          location: data.location || 'India',
+          type: 'Full-time',
+          salary: 'Not Disclosed',
+          postedAt: 'Recent',
+          logoColor: COLORS[Math.floor(Math.random() * COLORS.length)],
+          slug: `${date}-${batchName}-${doc.id}`
+        });
+      });
+    }
+
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+  }
+  return jobs.slice(0, 6);
+}
+
+export const FeaturedJobs = async () => {
+  const jobs = await getFeaturedJobs();
   return (
     <Section className="bg-white">
       <Container>
@@ -93,9 +70,15 @@ export const FeaturedJobs = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {MOCK_JOBS.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
+          {jobs.length === 0 ? (
+            <div className="col-span-full text-center py-10">
+              <p className="text-slate-500">Loading latest opportunities...</p>
+            </div>
+          ) : (
+            jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))
+          )}
         </div>
       </Container>
     </Section>

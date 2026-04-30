@@ -3,8 +3,8 @@ import { inter, jakarta } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TechHub | Master Tech Stacks, Coding & Interviews",
-  description: "Advanced learning platform for developers. Explore deep-dive blogs, practice interview questions, and solve coding challenges for any technology.",
+  title: "JobHub | Find Jobs, Master Interviews & Grow Your Career",
+  description: "The premier job platform for freshers. Discover verified job openings, master company-specific interview questions, and build the skills you need to get hired.",
 };
 
 export default function RootLayout({

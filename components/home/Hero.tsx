@@ -17,58 +17,50 @@ export const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Daily Technical Content
+            Direct Job Openings for Freshers
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 font-display">
-            Master Any <span className="text-gradient">Tech Stack</span> 🚀
+            Land Your Dream <span className="text-gradient">Tech Job</span> 💼
           </h1>
           
           <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
-            Deep dive into blogs, ace your interview questions, and master technical concepts for every technology.
+            The #1 platform for freshers to find jobs, master interviews, and build the skills that top companies are actually hiring for.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-            <a 
-              href="/tech-stacks" 
-              className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-glow flex items-center justify-center gap-2"
-            >
-              Explore Stacks
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a 
-              href="/interview-questions" 
-              className="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-sm"
-            >
-              Interview Prep
-            </a>
-          </div>
 
-          <div className="mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 animate-in fade-in duration-1000 delay-500">
-             {/* Tech Stack Icons Mock */}
-             <div className="flex flex-col items-center gap-2">
-               <span className="text-3xl">⚛️</span>
-               <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">React</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-               <span className="text-3xl">🐍</span>
-               <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Python</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-               <span className="text-3xl">▲</span>
-               <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Next.js</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-               <span className="text-3xl">🟢</span>
-               <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Node.js</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-               <span className="text-3xl">🐳</span>
-               <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Docker</span>
-             </div>
+          {/* Mockup Search Bar */}
+          <div className="relative max-w-2xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
+            <div className="flex flex-col sm:flex-row gap-2 p-2 bg-white rounded-2xl shadow-xl border border-slate-100">
+              <div className="flex-1 flex items-center px-4 gap-2 border-b sm:border-b-0 sm:border-r border-slate-100 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input 
+                  type="text" 
+                  placeholder="Job title or keyword" 
+                  className="bg-transparent border-none focus:ring-0 w-full text-slate-900 placeholder:text-slate-400"
+                />
+              </div>
+              <div className="flex-1 flex items-center px-4 gap-2 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <input 
+                  type="text" 
+                  placeholder="Location (e.g. Remote)" 
+                  className="bg-transparent border-none focus:ring-0 w-full text-slate-900 placeholder:text-slate-400"
+                />
+              </div>
+              <button className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-glow whitespace-nowrap">
+                Search Jobs
+              </button>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-6 text-slate-400 font-medium animate-in fade-in duration-1000 delay-500">
+            <span className="flex items-center gap-2"><span className="text-primary">✓</span> 2,000+ Active Jobs</span>
+            <span className="flex items-center gap-2"><span className="text-primary">✓</span> Verified Companies</span>
+            <span className="flex items-center gap-2"><span className="text-primary">✓</span> Free for Freshers</span>
           </div>
         </div>
       </Container>
     </div>
   );
 };
+
