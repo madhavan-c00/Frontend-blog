@@ -2,8 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { BlogCard, Post } from "@/components/blog/BlogCard";
-
+import { BlogClientView } from "@/components/blog/BlogClientView";
 import { blogRegistry } from "@/data/blog";
 
 // We convert the blogRegistry values to the Post format expected by BlogCard
@@ -20,46 +19,38 @@ const ARTICLES = Object.values(blogRegistry).map(blog => ({
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-white">
       <Navbar />
       
-      <div className="pt-32 pb-16 bg-white border-b border-slate-100">
+      {/* Premium Header */}
+      <div className="relative pt-48 pb-32 overflow-hidden bg-slate-50">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-float opacity-60" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 rounded-full blur-[120px] animate-float opacity-60" style={{ animationDelay: '-3s' }} />
+        </div>
+
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Career Guides & Tips 📚</h1>
-            <p className="text-xl text-slate-500 leading-relaxed mb-10">
-              Expert advice to help you land your first job, prepare for interviews, 
-              and build a long-lasting career in tech.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {['All', 'Interview Questions', 'Resume Tips', 'Career Guides', 'Roadmaps'].map((cat) => (
-                <button 
-                  key={cat} 
-                  className={`px-5 py-2 rounded-full font-bold text-sm transition-all ${
-                    cat === 'All' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white text-slate-900 text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-xl border border-slate-100">
+               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+               Expert Career Intelligence
             </div>
+            
+            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tight leading-[1.05] mb-10 font-display">
+              Career Guides <br />
+              <span className="text-gradient">& Strategies.</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+              Deep dives into interview patterns, resume architecture, and technical growth strategies from industry leaders.
+            </p>
           </div>
         </Container>
       </div>
 
-      <Section>
+      <Section className="bg-white">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ARTICLES.map((post) => (
-              <BlogCard key={post.id} post={post} />
-            ))}
-          </div>
-          
-          <div className="mt-20 text-center">
-             <button className="bg-white border-2 border-slate-200 text-slate-900 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition-colors shadow-sm">
-                Load More Articles
-             </button>
-          </div>
+          <BlogClientView articles={ARTICLES} />
         </Container>
       </Section>
 

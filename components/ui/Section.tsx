@@ -11,7 +11,7 @@ export const Section = ({ children, className = "", id, dark = false }: SectionP
   return (
     <section 
       id={id} 
-      className={`py-20 md:py-28 ${dark ? 'bg-slate-900 text-white' : 'bg-transparent'} ${className}`}
+      className={`py-6 md:py-8 ${dark ? 'bg-slate-900 text-white' : 'bg-transparent'} ${className}`}
     >
       {children}
     </section>

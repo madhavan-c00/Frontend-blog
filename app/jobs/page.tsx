@@ -57,14 +57,17 @@ async function getJobs(): Promise<Job[]> {
   } catch (error) {
     console.error("Critical error fetching jobs:", error);
   }
-  // Sort by ID or something for stability
-  return jobs;
+  
+  // Sort by slug (which starts with YYYY-MM-DD) descending to show latest first
+  return jobs.sort((a, b) => b.slug.localeCompare(a.slug));
 }
 
 export const revalidate = 60; // SSR with 60 sec ISR
 
 export default async function JobsPage() {
-  const jobs = await getJobs();
+  const allJobs = await getJobs();
+  const initialJobs = allJobs.slice(0, 12);
+  const initialHasMore = allJobs.length > 12;
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -75,29 +78,18 @@ export default async function JobsPage() {
           <h1 className="text-4xl font-bold text-slate-900 mb-4 text-center md:text-left">Find Your Career Start 💼</h1>
           <p className="text-lg text-slate-500 mb-8 text-center md:text-left">Browse our AI-curated fresh IT jobs updated daily.</p>
 
-          {/* Filters (UI only for now) */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <div className="relative flex-1 min-w-[200px]">
-              <input
-                type="text"
-                placeholder="Search jobs..."
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
-            </div>
-          </div>
         </Container>
       </div>
 
       <Section>
         <Container>
-          {jobs.length === 0 ? (
+          {initialJobs.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-3xl border border-slate-100">
               <h3 className="text-2xl font-bold text-slate-700">No jobs found right now</h3>
               <p className="text-slate-500 mt-2">Check back soon for latest opportunities!</p>
             </div>
           ) : (
-            <JobsListClient initialJobs={jobs} />
+            <JobsListClient initialJobs={initialJobs} initialHasMore={initialHasMore} />
           )}
         </Container>
       </Section>

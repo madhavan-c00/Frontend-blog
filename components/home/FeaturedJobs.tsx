@@ -57,7 +57,9 @@ async function getFeaturedJobs(): Promise<Job[]> {
   } catch (error) {
     console.error("Critical error fetching jobs:", error);
   }
-  return jobs.slice(0, 6);
+  
+  // Sort by slug (which starts with YYYY-MM-DD) descending to show latest first
+  return jobs.sort((a, b) => b.slug.localeCompare(a.slug)).slice(0, 6);
 }
 
 export const FeaturedJobs = async () => {
@@ -78,7 +80,7 @@ export const FeaturedJobs = async () => {
   }
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-white !pt-0">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -95,7 +97,7 @@ export const FeaturedJobs = async () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {jobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}

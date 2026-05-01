@@ -8,43 +8,55 @@ export const LatestBlogs = () => {
   const latestBlogs = Object.values(blogRegistry).slice(0, 4);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-white relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 -ml-32" />
+      
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 font-display">
-            Career Advice & <span className="text-gradient">Insights</span>
-          </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Expert strategies on resume building, interview techniques, and career growth for entry-level professionals.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 font-display tracking-tight leading-tight">
+              Career Advice & <br />
+              <span className="text-gradient">Industry Insights.</span>
+            </h2>
+            <p className="text-slate-500 text-lg md:text-xl font-medium">
+              Expert strategies on resume building, interview techniques, and career growth for entry-level professionals.
+            </p>
+          </div>
+          <Link 
+            href="/blog" 
+            className="btn-secondary hidden md:flex items-center gap-2 group"
+          >
+            Explore All Guides
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-3 sm:gap-10">
           {latestBlogs.map((post) => {
             const tech = technologies.find(t => t.id === post.techId);
             return (
               <Link 
                 key={post.id} 
                 href={`/blog/${post.id}`}
-                className="group flex flex-col md:flex-row gap-6 p-6 rounded-3xl bg-slate-50/50 border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-xl hover:shadow-primary/5 transition-all"
+                className="group p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 flex flex-col lg:flex-row gap-4 sm:gap-8"
               >
-                <div className="w-full md:w-48 h-48 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-5xl shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-full lg:w-40 h-32 sm:h-40 rounded-2xl sm:rounded-3xl bg-slate-50 flex items-center justify-center text-3xl sm:text-4xl shrink-0 group-hover:bg-primary/5 group-hover:rotate-[5deg] group-hover:scale-105 transition-all duration-500 shadow-inner">
                   {tech?.icon}
                 </div>
-                <div className="flex flex-col justify-center py-2">
-                  <span className="text-primary font-bold text-sm uppercase tracking-widest mb-2">
-                    {tech?.name}
+                <div className="flex flex-col justify-center">
+                  <span className="text-[8px] sm:text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 sm:mb-3">
+                    #{tech?.name}
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-sm sm:text-2xl font-black text-slate-900 mb-2 sm:mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-tight tracking-tight">
                     {post.title}
                   </h3>
-                  <p className="text-slate-500 mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-slate-400 font-medium">
-                    <span>{post.author}</span>
-                    <span>•</span>
-                    <span>{post.readTime} read</span>
+                  <div className="flex items-center gap-2 sm:gap-4 text-[9px] sm:text-xs font-bold text-slate-400">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                       <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-slate-100 border border-slate-200" />
+                       <span className="line-clamp-1">{post.author}</span>
+                    </div>
+                    <span className="w-1 h-1 rounded-full bg-slate-300 hidden sm:block" />
+                    <span className="whitespace-nowrap">{post.readTime}</span>
                   </div>
                 </div>
               </Link>
@@ -52,14 +64,8 @@ export const LatestBlogs = () => {
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <Link 
-            href="/blog" 
-            className="px-8 py-3 rounded-full border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition-all inline-flex items-center gap-2 shadow-sm"
-          >
-            Explore All Blogs
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </Link>
+        <div className="mt-16 text-center md:hidden">
+          <Link href="/blog" className="btn-primary w-full">Explore All Guides</Link>
         </div>
       </Container>
     </section>

@@ -18,10 +18,13 @@ interface BlogCardProps {
 
 export const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <Link href={`/blog/${post.slug}`} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
-      <div className={`h-48 ${post.color} relative overflow-hidden`}>
+    <Link 
+      href={`/blog/${post.slug}`} 
+      className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 flex flex-col h-full relative"
+    >
+      <div className={`h-64 ${post.color} relative overflow-hidden shrink-0`}>
         {/* Abstract pattern */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id={`pattern-${post.id}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -31,27 +34,41 @@ export const BlogCard = ({ post }: BlogCardProps) => {
             <rect width="100%" height="100%" fill={`url(#pattern-${post.id})`} />
           </svg>
         </div>
-        <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-slate-800 uppercase tracking-wider">
-          {post.category}
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        
+        <div className="absolute bottom-6 left-6 flex flex-col gap-2">
+           <span className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-xl text-[10px] font-black text-slate-900 uppercase tracking-[0.2em] shadow-lg self-start">
+            {post.category}
+          </span>
         </div>
       </div>
       
-      <div className="p-8">
-        <div className="flex items-center gap-2 text-slate-400 text-sm mb-4 font-medium">
-          <span>{post.date}</span>
+      <div className="p-8 sm:p-10 flex flex-col flex-1">
+        <div className="flex items-center gap-4 text-slate-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.15em] mb-6">
+          <div className="flex items-center gap-2">
+             <div className="w-5 h-5 rounded-full bg-slate-100 border border-slate-200" />
+             <span>{post.author}</span>
+          </div>
           <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-          <span>{post.author}</span>
+          <span>{post.date}</span>
         </div>
-        <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-4 line-clamp-2 leading-tight">
+        
+        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 group-hover:text-primary transition-colors mb-4 line-clamp-2 leading-[1.1] tracking-tight">
           {post.title}
         </h3>
-        <p className="text-slate-500 line-clamp-2 leading-relaxed mb-6">
+        
+        <p className="text-slate-500 font-medium text-base sm:text-lg line-clamp-3 leading-relaxed mb-8">
           {post.excerpt}
         </p>
-        <span className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-          Read Guide
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </span>
+        
+        <div className="mt-auto pt-6 border-t border-slate-50">
+          <span className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-3 group-hover:gap-5 transition-all">
+            Read Full Guide
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
       </div>
     </Link>
   );

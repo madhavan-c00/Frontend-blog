@@ -25,37 +25,46 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm py-3' : 'bg-transparent py-5'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-white/80 backdrop-blur-xl border-b border-slate-100 shadow-premium py-4' 
+        : 'bg-transparent py-6'
     }`}>
       <Container>
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="bg-primary text-white p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-glow">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </span>
-            <span className="text-2xl font-bold tracking-tight font-display">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <span className="relative z-10 bg-slate-900 text-white p-2.5 rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:rotate-[10deg] shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </span>
+              <div className="absolute inset-0 bg-primary blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+            </div>
+            <span className="text-2xl font-bold tracking-tight font-display text-slate-900">
               Job<span className="text-primary">Hub</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-slate-500 hover:text-slate-900 font-medium transition-colors"
+                className="px-4 py-2 text-[15px] text-slate-600 hover:text-slate-900 font-semibold transition-all duration-300 rounded-xl hover:bg-slate-50"
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
+          <div className="hidden md:flex items-center gap-4">
+            <button className="text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors">Log in</button>
+            <button className="btn-primary !py-2 !px-6 !text-xs uppercase tracking-wider">Get Started</button>
+          </div>
 
           {/* Mobile Toggle */}
           <button 
-            className="md:hidden p-2 text-slate-500"
+            className="md:hidden p-2 text-slate-900 bg-slate-50 rounded-xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -68,18 +77,20 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-border p-4 shadow-xl animate-in fade-in slide-in-from-top-4">
-              <div className="flex flex-col gap-4">
+          <div className="md:hidden absolute top-full left-0 right-0 mt-4 mx-4 bg-white/95 backdrop-blur-xl border border-slate-100 p-6 rounded-3xl shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.name} 
                     href={link.href}
-                    className="text-slate-500 hover:text-slate-900 font-medium p-2"
+                    className="text-slate-600 hover:text-slate-900 font-bold p-3 rounded-2xl hover:bg-slate-50 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
                 ))}
+                <hr className="my-2 border-slate-100" />
+                <button className="btn-primary w-full mt-2">Get Started</button>
               </div>
           </div>
         )}
