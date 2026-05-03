@@ -13,6 +13,8 @@ export const resumeTipsForFreshers2026: BlogContent = {
   readTime: "10 min",
   techId: "career",
   color: "bg-blue-500",
+  image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=2000&auto=format&fit=crop",
+  image2: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?q=80&w=2070&auto=format&fit=crop",
   content: (
     <div className="prose prose-slate max-w-none prose-lg">
       <p>

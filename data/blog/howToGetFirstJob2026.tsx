@@ -13,6 +13,8 @@ export const howToGetFirstJob2026: BlogContent = {
     readTime: "12 min",
     techId: "career",
     color: "bg-emerald-500",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

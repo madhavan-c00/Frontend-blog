@@ -10,6 +10,7 @@ export interface Post {
   date: string;
   slug: string;
   color: string;
+  image?: string;
 }
 
 interface BlogCardProps {
@@ -23,20 +24,27 @@ export const BlogCard = ({ post }: BlogCardProps) => {
       className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 flex flex-col h-full relative"
     >
       <div className={`h-64 ${post.color} relative overflow-hidden shrink-0`}>
-        {/* Abstract pattern */}
-        <div className="absolute inset-0 opacity-10 mix-blend-overlay">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id={`pattern-${post.id}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M0 40L40 0M-10 10L10 -10M30 50L50 30" stroke="white" strokeWidth="2" fill="none"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill={`url(#pattern-${post.id})`} />
-          </svg>
-        </div>
+        {post.image ? (
+          <img 
+            src={post.image} 
+            alt={post.title} 
+            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 opacity-10 mix-blend-overlay">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id={`pattern-${post.id}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M0 40L40 0M-10 10L10 -10M30 50L50 30" stroke="white" strokeWidth="2" fill="none"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill={`url(#pattern-${post.id})`} />
+            </svg>
+          </div>
+        )}
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         
         <div className="absolute bottom-6 left-6 flex flex-col gap-2">
            <span className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-xl text-[10px] font-black text-slate-900 uppercase tracking-[0.2em] shadow-lg self-start">

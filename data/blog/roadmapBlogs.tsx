@@ -28,6 +28,8 @@ Object.keys(contentRegistry).forEach((techId) => {
     readTime: "8 min",
     techId: techId,
     color: "bg-blue-500", // Default, could be customized
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
     content: (
       <div className="prose prose-slate max-w-none prose-lg">
         {content.introText && content.introText.length > 0 && (

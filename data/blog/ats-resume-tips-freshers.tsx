@@ -14,6 +14,8 @@ export const atsResumeTipsFreshers: BlogContent = {
     readTime: "10 min",
     techId: "career",
     color: "bg-orange-500",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1586282391129-76a6df230234?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

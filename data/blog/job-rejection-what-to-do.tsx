@@ -13,6 +13,8 @@ export const jobRejectionWhatToDo: BlogContent = {
     readTime: "9 min",
     techId: "career",
     color: "bg-pink-500",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

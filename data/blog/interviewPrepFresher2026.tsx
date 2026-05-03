@@ -13,6 +13,8 @@ export const interviewPrepFresher2026: BlogContent = {
     readTime: "11 min",
     techId: "career",
     color: "bg-purple-500",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

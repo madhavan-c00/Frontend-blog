@@ -13,6 +13,8 @@ export const itJobsChennaiFreshers2026: BlogContent = {
     readTime: "10 min",
     techId: "career",
     color: "bg-teal-500",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee57d5?q=80&w=2070&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

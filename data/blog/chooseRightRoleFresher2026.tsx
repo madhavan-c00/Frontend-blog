@@ -13,6 +13,8 @@ export const chooseRightRoleFresher2026: BlogContent = {
     readTime: "10 min",
     techId: "career",
     color: "bg-cyan-500",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

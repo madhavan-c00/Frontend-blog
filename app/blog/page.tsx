@@ -14,7 +14,8 @@ const ARTICLES = Object.values(blogRegistry).map(blog => ({
   author: blog.author,
   date: blog.date,
   slug: blog.slug,
-  color: blog.color
+  color: blog.color,
+  image: blog.image || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
 }));
 
 export default function BlogPage() {

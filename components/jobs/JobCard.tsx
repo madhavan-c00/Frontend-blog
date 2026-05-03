@@ -12,6 +12,7 @@ export interface Job {
   postedAt: string;
   logoColor: string;
   slug: string;
+  coverImage?: string;
 }
 
 interface JobCardProps {
@@ -20,19 +21,30 @@ interface JobCardProps {
 
 export const JobCard = ({ job }: JobCardProps) => {
   return (
-    <div className="group bg-white p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 relative overflow-hidden">
+    <div className="group bg-white rounded-[1.5rem] sm:rounded-[2.5rem] border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 relative overflow-hidden flex flex-col">
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity" />
       
-      <div className="flex items-start justify-between mb-4 sm:mb-8 relative z-10">
-        <div className={`w-10 h-10 sm:w-16 sm:h-16 ${job.logoColor} rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-black shadow-lg transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110`}>
-          {job.company.charAt(0)}
-        </div>
-        <div className="flex flex-col items-end">
-          <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1 bg-slate-900 text-white rounded-full shadow-lg">
-            {job.postedAt}
-          </span>
-        </div>
+      {/* Cover Image */}
+      <div className="w-full h-32 sm:h-40 bg-slate-100 relative overflow-hidden shrink-0">
+        <img 
+          src={job.coverImage || "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"} 
+          alt="Office space" 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
+
+      <div className="p-4 sm:p-8 flex-1 flex flex-col relative z-10 -mt-12 sm:-mt-16">
+        <div className="flex items-end justify-between mb-4 sm:mb-8">
+          <div className={`w-12 h-12 sm:w-16 sm:h-16 ${job.logoColor} rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-black shadow-lg transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 border-4 border-white`}>
+            {job.company.charAt(0)}
+          </div>
+          <div className="flex flex-col items-end mb-2 sm:mb-4">
+            <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest px-2 sm:px-3 py-1 bg-white text-slate-900 rounded-full shadow-md">
+              {job.postedAt}
+            </span>
+          </div>
+        </div>
 
       <div className="relative z-10">
         <h3 className="text-base sm:text-2xl font-extrabold text-slate-900 group-hover:text-primary transition-colors mb-1 sm:mb-2 line-clamp-1 tracking-tight">
@@ -62,6 +74,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           >
             Apply
           </Link>
+        </div>
         </div>
       </div>
     </div>

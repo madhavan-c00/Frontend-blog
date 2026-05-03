@@ -53,7 +53,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
               <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight font-display text-slate-900">
                 {post.title}
               </h1>
-              <div className="flex items-center gap-4 py-8 border-y border-slate-100">
+              <div className="flex items-center gap-4 py-8 border-y border-slate-100 mb-8">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
                   {post.author.charAt(0)}
                 </div>
@@ -62,11 +62,29 @@ export default async function BlogDetailPage({ params }: PageProps) {
                   <div className="text-sm text-slate-500">{post.readTime} Read</div>
                 </div>
               </div>
+              
+              <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl relative">
+                <img 
+                  src={post.image || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="mt-12">
               {post.content}
             </div>
+
+            {post.image2 && (
+              <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl relative mt-16 mb-8 border border-slate-100">
+                <img 
+                  src={post.image2} 
+                  alt={`${post.title} - Second Image`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            )}
           </div>
         </Container>
       </section>

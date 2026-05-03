@@ -14,6 +14,8 @@ export const applyForJobsWithoutExperience2026: BlogContent = {
     readTime: "10 min",
     techId: "career",
     color: "bg-rose-500",
+    image: "https://images.unsplash.com/photo-1570126618953-d437176e8c79?q=80&w=2062&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

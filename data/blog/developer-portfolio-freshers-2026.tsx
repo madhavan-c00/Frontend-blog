@@ -13,6 +13,8 @@ export const developerPortfolioFresher2026: BlogContent = {
     readTime: "11 min",
     techId: "career",
     color: "bg-indigo-500",
+    image: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=2005&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>

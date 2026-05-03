@@ -11,5 +11,7 @@ export interface BlogContent {
   readTime: string;
   techId: string;
   color: string;
+  image?: string;
+  image2?: string;
   content: ReactNode;
 }

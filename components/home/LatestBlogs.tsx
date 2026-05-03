@@ -40,8 +40,13 @@ export const LatestBlogs = () => {
                 href={`/blog/${post.id}`}
                 className="group p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-premium transition-all duration-500 flex flex-col lg:flex-row gap-4 sm:gap-8"
               >
-                <div className="w-full lg:w-40 h-32 sm:h-40 rounded-2xl sm:rounded-3xl bg-slate-50 flex items-center justify-center text-3xl sm:text-4xl shrink-0 group-hover:bg-primary/5 group-hover:rotate-[5deg] group-hover:scale-105 transition-all duration-500 shadow-inner">
-                  {tech?.icon}
+                <div className="w-full lg:w-40 h-32 sm:h-40 rounded-2xl sm:rounded-3xl bg-slate-50 flex items-center justify-center text-3xl sm:text-4xl shrink-0 group-hover:bg-primary/5 group-hover:rotate-[5deg] group-hover:scale-105 transition-all duration-500 shadow-inner relative overflow-hidden">
+                  <img 
+                    src={post.image || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"} 
+                    alt={post.title} 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Overlay for icon if needed in future, but replacing with image per user request */}
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-[8px] sm:text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 sm:mb-3">

@@ -13,6 +13,8 @@ export const bestProjectsForFreshers2026: BlogContent = {
     readTime: "10 min",
     techId: "career",
     color: "bg-amber-500",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
+    image2: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
     content: (
         <div className="prose prose-slate max-w-none prose-lg">
             <p>
