@@ -2,14 +2,14 @@ name: Daily Backend Automation Pipeline
 
 on:
   schedule:
-    # 8:30 AM IST (Scrape & Batch)
-    - cron: '0 3 * * *'
-    # 10:30 AM IST (Process Batch 1 + Reels)
-    - cron: '0 5 * * *'
-    # 1:30 PM IST (Process Batch 2)
-    - cron: '0 8 * * *'
-    # 5:30 PM IST (Process Batch 3 + Reels)
-    - cron: '0 12 * * *'
+    # 8:45 AM IST (Scrape & Batch)
+    - cron: '15 3 * * *'
+    # 10:45 AM IST (Process Batch 1 + Reels)
+    - cron: '15 5 * * *'
+    # 1:45 PM IST (Process Batch 2)
+    - cron: '15 8 * * *'
+    # 5:45 PM IST (Process Batch 3 + Reels)
+    - cron: '15 12 * * *'
   workflow_dispatch:
     inputs:
       manual_task:
@@ -49,20 +49,20 @@ jobs:
         run: |
           cd backend
           
-          if [ "$CRON_SCHEDULE" == "0 3 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "scrape" ]; then
-            echo "☀️ [8:30 AM IST] Scraping and Batching..."
+          if [ "$CRON_SCHEDULE" == "15 3 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "scrape" ]; then
+            echo "☀️ [8:45 AM IST] Scraping and Batching..."
             node scrapeAndBatch.js
           
-          elif [ "$CRON_SCHEDULE" == "0 5 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch1" ]; then
-            echo "🔥 [10:30 AM IST] Processing Batch 1 (Videos + Content)..."
+          elif [ "$CRON_SCHEDULE" == "15 5 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch1" ]; then
+            echo "🔥 [10:45 AM IST] Processing Batch 1 (Videos + Content)..."
             node processBatch.js batch1 true
           
-          elif [ "$CRON_SCHEDULE" == "0 8 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch2" ]; then
-            echo "🚀 [1:30 PM IST] Processing Batch 2 (Videos + Content)..."
+          elif [ "$CRON_SCHEDULE" == "15 8 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch2" ]; then
+            echo "🚀 [1:45 PM IST] Processing Batch 2 (Videos + Content)..."
             node processBatch.js batch2 true
           
-          elif [ "$CRON_SCHEDULE" == "0 12 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch3" ]; then
-            echo "🎬 [5:30 PM IST] Processing Batch 3 (Videos + Content)..."
+          elif [ "$CRON_SCHEDULE" == "15 12 * * *" ] || [ "${{ github.event.inputs.manual_task }}" == "batch3" ]; then
+            echo "🎬 [5:45 PM IST] Processing Batch 3 (Videos + Content)..."
             node processBatch.js batch3 true
             
           else
