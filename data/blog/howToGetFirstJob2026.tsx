@@ -25,16 +25,7 @@ export const howToGetFirstJob2026: BlogContent = {
                 If you are searching for how to get your first IT job as a fresher in 2026, the key is to build a profile that looks job‑ready, not just theory‑heavy. Freshers who combine a clean resume, 2–3 proper projects, and daily practice usually get noticed faster. This beginner‑friendly guide gives you a practical step‑by‑step plan to reach your first IT role.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/it-job-roadmap-for-freshers.jpg"
-                    alt="IT job roadmap for freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    IT job roadmap for freshers
-                </p>
-            </div>
+
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Get Your First IT Job as a Fresher in 2026
@@ -77,16 +68,7 @@ export const howToGetFirstJob2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/fresher-skill-checklist.jpg"
-                    alt="Skills checklist for IT jobs for freshers"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    fresher skill checklist
-                </p>
-            </div>
+
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Step‑by‑Step Way to Apply for IT Jobs

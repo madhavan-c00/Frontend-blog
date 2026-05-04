@@ -25,16 +25,7 @@ export const interviewPrepFresher2026: BlogContent = {
                 If you are searching for how to prepare for IT interviews as a fresher in 2026, focus on revising your fundamentals, practicing your projects, and preparing answers for common HR and technical questions. This step‑by‑step guide covers what to study, how to mock‑interview, and how to avoid common mistakes.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/interview-prep-roadmap.jpg"
-                    alt="Interview preparation roadmap for freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Interview preparation roadmap for freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 What IT Interviews for Freshers Usually Test
@@ -89,16 +80,7 @@ export const interviewPrepFresher2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/mock-interview-setup.jpg"
-                    alt="Mock interview setup for IT freshers"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Mock interview setup for IT freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Answer Common Technical Questions

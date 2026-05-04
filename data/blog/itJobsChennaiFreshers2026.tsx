@@ -25,16 +25,7 @@ export const itJobsChennaiFreshers2026: BlogContent = {
                 If you are searching for IT jobs in Chennai for freshers in 2026, focus on roles like software trainee, QA trainee, IT support, and junior developer positions. This complete guide explains which companies hire in Chennai, which skills are in demand, and how to improve your chances.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/it-jobs-chennai-2026.jpg"
-                    alt="IT jobs in Chennai for freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    IT jobs in Chennai for freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Find IT Jobs in Chennai for Freshers in 2026
@@ -89,16 +80,7 @@ export const itJobsChennaiFreshers2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/fresher-job-roles-chennai.jpg"
-                    alt="IT fresher job roles in Chennai in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Fresher job roles in Chennai
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Key Skills in Demand for Freshers in Chennai

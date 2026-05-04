@@ -25,16 +25,7 @@ export const chooseRightRoleFresher2026: BlogContent = {
                 If you are searching for how to choose the right IT role as a fresher in 2026, focus on self‑analysis, realistic expectations, and small experiments. This guide helps you compare common roles, match them with your personality, and make a clear decision without stress.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/it-roles-freshers-2026.jpg"
-                    alt="IT roles for freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Common IT roles for freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Why Choosing the Right Role Matters
@@ -83,16 +74,7 @@ export const chooseRightRoleFresher2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/role-self-assessment.jpg"
-                    alt="Self assessment checklist for IT fresher roles"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Role‑fit self‑assessment for freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Popular IT Roles for Freshers in 2026

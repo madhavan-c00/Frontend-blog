@@ -25,16 +25,7 @@ export const developerPortfolioFresher2026: BlogContent = {
                 If you are searching for how to build a developer portfolio as a fresher in 2026, focus on simplicity, clarity, and working links. This step‑by‑step guide helps you structure your portfolio, choose the right projects, and deploy it so recruiters can see your work easily.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/developer-portfolio-structure.jpg"
-                    alt="Developer portfolio structure for freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Developer portfolio structure for freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Why a Developer Portfolio Matters for Freshers in 2026
@@ -89,16 +80,7 @@ export const developerPortfolioFresher2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/portfolio-project-showcase.jpg"
-                    alt="Project showcase example for fresher developer portfolio"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Project showcase example for fresher developer portfolio
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Step‑by‑Step Guide to Build the Portfolio

@@ -1,13 +1,13 @@
 "use server";
 
 import { db } from "@/lib/firebase";
-import { collectionGroup, getDocs, limit, query, where, orderBy, startAfter, doc, getDoc } from "firebase/firestore";
+import { collectionGroup, getDocs, limit, query, where, orderBy, startAfter, doc, getDoc, collection } from "firebase/firestore";
 import { Job } from "@/components/jobs/JobCard";
 
 const COLORS = ['bg-indigo-500', 'bg-emerald-500', 'bg-orange-500', 'bg-blue-500', 'bg-purple-500', 'bg-red-500', 'bg-cyan-500'];
 
 export async function getJobsAction(
-  lastVisibleId?: string, 
+  lastVisibleId?: string,
   limitCount: number = 12,
   selectedDate?: string,
   selectedBatch?: string,
@@ -15,7 +15,7 @@ export async function getJobsAction(
 ) {
   let jobs: Job[] = [];
   const batches = selectedBatch ? [selectedBatch] : ['batch_3', 'batch_2', 'batch_1'];
-  
+
   try {
     // If searching, we fetch a larger chunk to ensure we find matches
     const fetchLimit = searchQuery ? 150 : 50;
@@ -48,7 +48,7 @@ export async function getJobsAction(
           where('processed', '==', true),
           limit(fetchLimit)
         );
-        
+
         const snap = await getDocs(q);
         return { snap, batchName };
       });
@@ -60,7 +60,7 @@ export async function getJobsAction(
           const data = doc.data();
           const pathParts = doc.ref.path.split('/');
           const date = pathParts[1];
-          
+
           if (selectedDate && date !== selectedDate) return;
 
           jobs.push({
@@ -81,8 +81,8 @@ export async function getJobsAction(
     // Server-side search filter
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      jobs = jobs.filter(j => 
-        j.title.toLowerCase().includes(q) || 
+      jobs = jobs.filter(j =>
+        j.title.toLowerCase().includes(q) ||
         j.company.toLowerCase().includes(q) ||
         j.location.toLowerCase().includes(q)
       );

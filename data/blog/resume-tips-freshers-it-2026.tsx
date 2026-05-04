@@ -25,16 +25,7 @@ export const resumeTipsForFreshers2026: BlogContent = {
         If you are searching for resume tips for freshers in IT in 2026, focus on clarity, relevance, and proof of work. Use examples from real profiles to understand how to order skills, projects, and education. This complete guide with examples will help you avoid common mistakes and make your resume more interview‑friendly.
       </p>
 
-      <div className="my-10">
-        <img
-          src="/images/fresher-resume-layout.jpg"
-          alt="Resume layout for IT freshers in 2026"
-          className="rounded-3xl shadow-xl border border-slate-200"
-        />
-        <p className="text-center text-sm text-slate-500 mt-4 italic">
-          Resume layout for IT freshers
-        </p>
-      </div>
+
 
       <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
         Best Resume Format for Freshers in IT in 2026
@@ -66,16 +57,7 @@ export const resumeTipsForFreshers2026: BlogContent = {
         ))}
       </ul>
 
-      <div className="my-10">
-        <img
-          src="/images/resume-dos-donts-it-freshers.jpg"
-          alt="Resume dos and donts for IT freshers"
-          className="rounded-3xl shadow-xl border border-slate-200"
-        />
-        <p className="text-center text-sm text-slate-500 mt-4 italic">
-          Resume dos and donts for IT freshers
-        </p>
-      </div>
+
 
       <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
         How to Describe Projects in a Fresher Resume

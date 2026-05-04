@@ -26,16 +26,7 @@ export const applyForJobsWithoutExperience2026: BlogContent = {
                 If you are searching for how to apply for jobs without experience as a fresher in 2026, focus on projects, internships, GitHub, certifications, and a strong resume. This complete guide shows you how to position yourself better and apply more effectively.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/no-experience-job-application-plan.jpg"
-                    alt="How to apply for jobs without experience as a fresher in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Job application plan for freshers without experience
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Apply for Jobs Without Experience as a Fresher in 2026
@@ -90,16 +81,7 @@ export const applyForJobsWithoutExperience2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/fresher-application-channels.jpg"
-                    alt="Job application channels for freshers without experience"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Application channels for freshers without experience
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Write a Strong Fresher Resume Without Experience

@@ -25,16 +25,7 @@ export const jobRejectionWhatToDo: BlogContent = {
                 If you are searching for what to do after a job rejection, this guide gives you a clear, practical plan: how to process the feeling, ask for feedback, update your resume, and keep applying with better clarity and confidence.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/job-rejection-bouncing-back.jpg"
-                    alt="Bouncing back after a job rejection"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    How to bounce back after a job rejection
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Why Job Rejection Happens (Even to Good Candidates)
@@ -83,16 +74,7 @@ export const jobRejectionWhatToDo: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/application-tracker-sheet.jpg"
-                    alt="Job application tracker sheet for freshers"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Tracking applications and outcomes
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Process Emotion and Stay Motivated

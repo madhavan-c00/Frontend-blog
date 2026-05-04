@@ -25,16 +25,7 @@ export const bestProjectsForFreshers2026: BlogContent = {
                 If you are searching for the best projects for freshers to get IT jobs faster in 2026, focus on simple, role‑based apps that solve real problems. This guide lists practical project ideas and explains how to make them more impressive with documentation, GitHub, and deployment.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/fresher-project-roadmap.jpg"
-                    alt="Best project roadmap for IT freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Project roadmap for IT freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 Why Good Projects Matter for Freshers in 2026
@@ -101,16 +92,7 @@ export const bestProjectsForFreshers2026: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/project-ideas-by-role.jpg"
-                    alt="Project ideas for developer and QA freshers"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Project ideas for developer and QA freshers
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Make Projects More Impressive

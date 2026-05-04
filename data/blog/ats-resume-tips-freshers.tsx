@@ -26,16 +26,7 @@ export const atsResumeTipsFreshers: BlogContent = {
                 If you are searching for ATS‑friendly resume tips for freshers in IT 2026, focus on simple structure, keyword‑matching, and clean, readable content. This guide shows you how to organize your resume for both ATS and human recruiters.
             </p>
 
-            <div className="my-10">
-                <img
-                    src="/images/ats-resume-freshers.jpg"
-                    alt="ATS‑friendly resume for IT freshers in 2026"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    Example of an ATS‑friendly fresher resume
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 What Is an ATS‑Friendly Resume?
@@ -90,16 +81,7 @@ export const atsResumeTipsFreshers: BlogContent = {
                 </li>
             </ul>
 
-            <div className="my-10">
-                <img
-                    src="/images/ats-dos-donts-freshers.jpg"
-                    alt="ATS‑friendly resume dos and donts for freshers"
-                    className="rounded-3xl shadow-xl border border-slate-200"
-                />
-                <p className="text-center text-sm text-slate-500 mt-4 italic">
-                    ATS‑friendly resume dos and donts
-                </p>
-            </div>
+            
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">
                 How to Optimize Sections for ATS
