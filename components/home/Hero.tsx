@@ -65,16 +65,16 @@ export const Hero = () => {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
+          <div className="flex flex-row items-center justify-center gap-3 mb-16 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
             <a
               href="/jobs"
-              className="btn-primary w-full sm:w-auto !py-5 !px-12 text-md shadow-glow scale-105 hover:scale-110 transition-transform"
+              className="btn-primary !py-3 !px-6 sm:!py-5 sm:!px-12 text-sm sm:text-md shadow-glow hover:scale-105 transition-transform"
             >
               Explore Jobs
             </a>
             <a
               href="/tech-stacks"
-              className="btn-secondary w-full sm:w-auto !py-5 !px-12 text-md border-2 hover:bg-slate-50 transition-all"
+              className="btn-secondary !py-3 !px-6 sm:!py-5 sm:!px-12 text-sm sm:text-md border-2 hover:bg-slate-50 transition-all"
             >
               Explore Tech
             </a>
