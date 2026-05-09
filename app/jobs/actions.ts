@@ -20,28 +20,37 @@ export async function getJobsAction(
     // If searching, we fetch a larger chunk to ensure we find matches
     const fetchLimit = searchQuery ? 150 : 50;
 
-    if (selectedDate && selectedBatch) {
-      const q = query(
-        collection(db, 'daily_batches', selectedDate, selectedBatch),
-        where('processed', '==', true),
-        limit(200)
-      );
-      const snap = await getDocs(q);
-      snap.docs.forEach((doc) => {
-        const data = doc.data();
-        jobs.push({
-          id: doc.id,
-          title: data.title || 'Tech Role',
-          company: data.company || 'Company',
-          location: data.location || 'India',
-          type: 'Full-time',
-          salary: 'Not Disclosed',
-          postedAt: selectedDate,
-          logoColor: COLORS[Math.floor(Math.random() * COLORS.length)],
-          slug: `${selectedDate}-${selectedBatch}-${doc.id}`
+    if (selectedDate) {
+      // If a date is selected, we query the specific date folder directly in 'daily_batches'
+      const promises = batches.map(async (batchName) => {
+        const q = query(
+          collection(db, 'daily_batches', selectedDate, batchName),
+          where('processed', '==', true),
+          limit(100)
+        );
+        const snap = await getDocs(q);
+        return { snap, batchName, date: selectedDate };
+      });
+
+      const results = await Promise.all(promises);
+      results.forEach(({ snap, batchName, date }) => {
+        snap.docs.forEach((doc) => {
+          const data = doc.data();
+          jobs.push({
+            id: doc.id,
+            title: data.title || 'Tech Role',
+            company: data.company || 'Company',
+            location: data.location || 'India',
+            type: 'Full-time',
+            salary: 'Not Disclosed',
+            postedAt: date,
+            logoColor: COLORS[Math.floor(Math.random() * COLORS.length)],
+            slug: `${date}-${batchName}-${doc.id}`
+          });
         });
       });
     } else {
+      // Fallback: Use collectionGroup for cross-date browsing (Home page/All jobs)
       const promises = batches.map(async (batchName) => {
         let q = query(
           collectionGroup(db, batchName),
@@ -59,11 +68,7 @@ export async function getJobsAction(
         snap.docs.forEach((doc) => {
           const data = doc.data();
           const pathParts = doc.ref.path.split('/');
-          // For path daily_batches/YYYY-MM-DD/batch_X/job_id
-          // index 0: "", 1: "daily_batches", 2: "YYYY-MM-DD"
-          const date = pathParts[2];
-
-          if (selectedDate && date !== selectedDate) return;
+          const date = pathParts[1]; // path is daily_batches/YYYY-MM-DD/batch_X/jobId
 
           jobs.push({
             id: doc.id,
