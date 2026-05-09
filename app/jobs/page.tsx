@@ -38,7 +38,9 @@ async function getJobs(): Promise<Job[]> {
       snap.docs.forEach((doc) => {
         const data = doc.data();
         const pathParts = doc.ref.path.split('/');
-        const date = pathParts[1];
+        // For path daily_batches/YYYY-MM-DD/batch_X/job_id
+        // index 0: "", 1: "daily_batches", 2: "YYYY-MM-DD"
+        const date = pathParts[2];
         
         jobs.push({
           id: doc.id,

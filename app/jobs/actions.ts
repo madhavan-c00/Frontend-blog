@@ -22,7 +22,7 @@ export async function getJobsAction(
 
     if (selectedDate && selectedBatch) {
       const q = query(
-        collection(db, 'jobs_data', selectedDate, selectedBatch),
+        collection(db, 'daily_batches', selectedDate, selectedBatch),
         where('processed', '==', true),
         limit(200)
       );
@@ -59,7 +59,9 @@ export async function getJobsAction(
         snap.docs.forEach((doc) => {
           const data = doc.data();
           const pathParts = doc.ref.path.split('/');
-          const date = pathParts[1];
+          // For path daily_batches/YYYY-MM-DD/batch_X/job_id
+          // index 0: "", 1: "daily_batches", 2: "YYYY-MM-DD"
+          const date = pathParts[2];
 
           if (selectedDate && date !== selectedDate) return;
 
