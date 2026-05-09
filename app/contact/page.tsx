@@ -34,7 +34,7 @@ export default function ContactPage() {
                        </div>
                        <div>
                           <p className="text-sm text-slate-400 font-medium mb-1 uppercase">Email Us</p>
-                          <p className="text-slate-900 font-bold">support@nextjob.com</p>
+                          <p className="text-slate-900 font-bold">support@freshersflow.in</p>
                        </div>
                     </div>
                     <div className="flex gap-4 items-start">
@@ -43,7 +43,7 @@ export default function ContactPage() {
                        </div>
                        <div>
                           <p className="text-sm text-slate-400 font-medium mb-1 uppercase">Call Us</p>
-                          <p className="text-slate-900 font-bold">+1 (555) 123-4567</p>
+                          <p className="text-slate-900 font-bold">+91 98765 43210</p>
                        </div>
                     </div>
                   </div>
