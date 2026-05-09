@@ -103,14 +103,13 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">10. Contact Us</h2>
+            <h2 className="text-2xl font-bold mb-4">10. Questions About These Terms</h2>
             <p className="text-slate-600 leading-relaxed">
-              If you have questions about these Terms & Conditions, please contact us:
+              For any legal questions or concerns about these Terms & Conditions, reach out to us directly:
             </p>
             <div className="mt-4 p-6 bg-slate-50 rounded-2xl">
               <p className="font-bold text-slate-900">FreshersFlow</p>
-              <p className="text-slate-600">Email: <a href="mailto:support@freshersflow.in" className="text-primary">support@freshersflow.in</a></p>
-              <p className="text-slate-600">Website: <a href="https://freshersflow.in" className="text-primary">freshersflow.in</a></p>
+              <p className="text-slate-600">Email: <a href="mailto:businessmadhavan@gmail.com" className="text-primary">businessmadhavan@gmail.com</a></p>
             </div>
           </section>
 

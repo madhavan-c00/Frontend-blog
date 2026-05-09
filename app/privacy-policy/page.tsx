@@ -130,8 +130,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="mt-4 p-6 bg-slate-50 rounded-2xl">
               <p className="font-bold text-slate-900">FreshersFlow</p>
-              <p className="text-slate-600">Email: <a href="mailto:support@freshersflow.in" className="text-primary">support@freshersflow.in</a></p>
-              <p className="text-slate-600">Website: <a href="https://freshersflow.in" className="text-primary">freshersflow.in</a></p>
+              <p className="text-slate-600">Email: <a href="mailto:businessmadhavan@gmail.com" className="text-primary">businessmadhavan@gmail.com</a></p>
             </div>
           </section>
 
