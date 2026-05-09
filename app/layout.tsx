@@ -3,8 +3,8 @@ import { inter, jakarta } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "JobHub | Find Jobs, Master Interviews & Grow Your Career",
-  description: "The premier job platform for freshers. Discover verified job openings, master company-specific interview questions, and build the skills you need to get hired.",
+  title: "FreshersFlow | Learn, Prepare & Get Hired",
+  description: "The ultimate career platform for freshers. Master in-demand skills, prepare with company-specific interview questions, and land your dream job.",
 };
 
 export default function RootLayout({

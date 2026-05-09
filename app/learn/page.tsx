@@ -7,7 +7,7 @@ import { technologies } from "@/data/tech-data";
 import { contentRegistry } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Learn In-Demand Technologies | JobHub",
+  title: "Learn In-Demand Technologies | FreshersFlow",
   description:
     "Structured guides to help you become job-ready. Explore Frontend, Backend, Database, DevOps, and Full-Stack technologies.",
 };

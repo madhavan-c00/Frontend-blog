@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Container } from '../ui/Container';
+import { Logo } from '../ui/Logo';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,16 +15,11 @@ export const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           <div className="md:col-span-5">
-            <Link href="/" className="flex items-center gap-3 mb-8 group">
-              <span className="bg-white text-slate-950 p-2.5 rounded-2xl transition-transform duration-500 group-hover:rotate-[10deg] shadow-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              </span>
-              <span className="text-3xl font-black tracking-tight font-display">
-                Job<span className="text-primary">Hub</span>
-              </span>
+            <Link href="/" className="flex items-center mb-8 group">
+              <Logo size="lg" className="brightness-0 invert" showTagline={true} />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-md font-medium">
-              The premium career destination for the next generation of tech talent. Master your craft, ace your interviews, and land your dream job with JobHub.
+              The ultimate career destination for the next generation of tech talent. Learn, prepare, and land your dream job with FreshersFlow.
             </p>
             <div className="flex gap-4">
                {['Twitter', 'LinkedIn', 'GitHub'].map(social => (
@@ -68,7 +64,7 @@ export const Footer = () => {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-slate-500 text-sm font-bold tracking-tight">
-            © {currentYear} JobHub. Built for the future of tech hiring.
+            © {currentYear} FreshersFlow. Built for the future of tech hiring.
           </p>
           <div className="flex gap-8 items-center text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">
             <span>Next.js 16.2</span>

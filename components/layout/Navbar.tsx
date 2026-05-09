@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Container } from '../ui/Container';
+import { Logo } from '../ui/Logo';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,16 +33,8 @@ export const Navbar = () => {
     }`}>
       <Container>
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <span className="relative z-10 bg-slate-900 text-white p-2.5 rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:rotate-[10deg] shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              </span>
-              <div className="absolute inset-0 bg-primary blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-            </div>
-            <span className="text-2xl font-bold tracking-tight font-display text-slate-900">
-              Job<span className="text-primary">Hub</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Logo />
           </Link>
 
           {/* Desktop Nav */}
@@ -55,11 +48,6 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center gap-4">
-            <button className="text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors">Log in</button>
-            <button className="btn-primary !py-2 !px-6 !text-xs uppercase tracking-wider">Get Started</button>
           </div>
 
           {/* Mobile Toggle */}
@@ -89,8 +77,7 @@ export const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
-                <hr className="my-2 border-slate-100" />
-                <button className="btn-primary w-full mt-2">Get Started</button>
+
               </div>
           </div>
         )}

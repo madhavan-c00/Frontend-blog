@@ -4,13 +4,13 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   
-  --color-primary: #6366f1;
-  --color-primary-dark: #4f46e5;
-  --color-primary-glow: rgba(99, 102, 241, 0.15);
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-primary-glow: rgba(59, 130, 246, 0.15);
   
-  --color-secondary: #10b981;
-  --color-secondary-dark: #059669;
-  --color-secondary-glow: rgba(16, 185, 129, 0.15);
+  --color-secondary: #06b6d4;
+  --color-secondary-dark: #0891b2;
+  --color-secondary-glow: rgba(6, 182, 212, 0.15);
   
   --color-accent: #f59e0b;
   
